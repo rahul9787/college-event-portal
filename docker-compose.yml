@@ -4,7 +4,7 @@ services:
 
     image: mysql:8.0
 
-    container_name: college-database
+
 
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
