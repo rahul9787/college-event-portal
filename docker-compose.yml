@@ -49,10 +49,12 @@ services:
     networks:
       - college-network
 
+
 volumes:
-mysql_data:
-  external: true
-  name: college-event-portal_mysql_data
+
+  mysql_data:
+    external: true
+    name: college-event-portal_mysql_data
 
 
 networks:
