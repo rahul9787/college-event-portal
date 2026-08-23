@@ -4,8 +4,6 @@ services:
 
     image: mysql:8.0
 
-
-
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: college_event_db
@@ -23,9 +21,7 @@ services:
 
   backend:
 
-    build:
-      context: ./backend
-
+    image: 817137372823.dkr.ecr.us-east-1.amazonaws.com/college-event-portal-backend:latest
 
     environment:
       DB_HOST: database
@@ -42,9 +38,7 @@ services:
 
   frontend:
 
-    build:
-      context: ./frontend
-
+    image: 817137372823.dkr.ecr.us-east-1.amazonaws.com/college-event-portal-frontend:latest
 
     ports:
       - "80:80"
