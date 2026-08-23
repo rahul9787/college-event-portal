@@ -56,7 +56,6 @@ volumes:
     external: true
     name: college-event-portal_mysql_data
 
-
 networks:
 
   college-network:
