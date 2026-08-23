@@ -24,9 +24,9 @@ services:
     image: 817137372823.dkr.ecr.us-east-1.amazonaws.com/college-event-portal-backend:latest
 
     environment:
-      DB_HOST: database
-      DB_USER: root
-      DB_PASSWORD: rootpassword
+      DB_HOST: college-event-db.c23oo8qukcn2.us-east-1.rds.amazonaws.com
+      DB_USER: admin
+      DB_PASSWORD: user2002
       DB_NAME: college_event_db
 
     depends_on:
