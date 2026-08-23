@@ -7,7 +7,7 @@ services:
     environment:
       DB_HOST: college-event-db.c23oo8qukcn2.us-east-1.rds.amazonaws.com
       DB_USER: admin
-      DB_PASSWORD: userdata
+      DB_PASSWORD: user2002
       DB_NAME: college_event_db
 
     networks:
