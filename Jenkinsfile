@@ -25,12 +25,16 @@ pipeline {
             steps {
                 sh 'docker --version'
                 sh 'docker compose version'
+                sh 'aws --version'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'docker compose build'
+                sh '''
+                    docker build -t college-event-portal-frontend:latest ./frontend
+                    docker build -t college-event-portal-backend:latest ./backend
+                '''
             }
         }
 
@@ -65,6 +69,7 @@ pipeline {
             steps {
                 sh '''
                     docker compose down
+                    docker compose pull
                     docker compose up -d
                 '''
             }
@@ -74,7 +79,7 @@ pipeline {
             steps {
                 sh '''
                     docker ps
-                    docker images
+                    docker compose ps
                 '''
             }
         }
