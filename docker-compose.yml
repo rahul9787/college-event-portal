@@ -1,24 +1,5 @@
 services:
 
-  database:
-
-    image: mysql:8.0
-
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: college_event_db
-
-    ports:
-      - "127.0.0.1:3306:3306"
-
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
-
-    networks:
-      - college-network
-
-
   backend:
 
     image: 817137372823.dkr.ecr.us-east-1.amazonaws.com/college-event-portal-backend:latest
@@ -26,11 +7,8 @@ services:
     environment:
       DB_HOST: college-event-db.c23oo8qukcn2.us-east-1.rds.amazonaws.com
       DB_USER: admin
-      DB_PASSWORD: user2002
+      DB_PASSWORD: userdata
       DB_NAME: college_event_db
-
-    depends_on:
-      - database
 
     networks:
       - college-network
@@ -49,12 +27,6 @@ services:
     networks:
       - college-network
 
-
-volumes:
-
-  mysql_data:
-    external: true
-    name: college-event-portal_mysql_data
 
 networks:
 
